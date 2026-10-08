@@ -1,0 +1,49 @@
+/* Design tokens — mirror the "Ops Portal UI kit" board in Figma. */
+:root {
+  /* Colour */
+  --navy-950: #0B132B;   /* sidebar */
+  --navy-900: #0F172A;   /* text, dark cards */
+  --navy-800: #1C2541;   /* sidebar hover / cards */
+  --navy-700: #26304F;   /* sidebar pills, track */
+  --indigo-500: #6366F1; /* accent: icons, bars, focus, charts */
+  --indigo-600: #4F46E5; /* fills behind white text (AA 6.3:1) */
+  --indigo-700: #4338CA; /* hover, links */
+  --indigo-300: #A5B4FC; /* accent text on navy */
+  --indigo-100: #E0E7FF;
+  --indigo-50:  #EEF2FF;
+  --offwhite:   #F1F5F9; /* page ground */
+  --slate-50:   #F8FAFC;
+  --slate-100:  #E9EEF5;
+  --slate-150:  #EBEFF5; /* row dividers */
+  --slate-200:  #E2E8F0; /* borders */
+  --slate-300:  #CBD5E1;
+  --slate-400:  #94A3B8;
+  --slate-600:  #526075; /* muted text (5.8:1 on off-white) */
+  --slate-700:  #334155;
+  --nav-text:   #A3AEC8;
+  --nav-muted:  #7C88A8;
+  --white:      #FFFFFF;
+
+  /* Status */
+  --pending-bg: #FFF1D6; --pending-fg: #8A5300; --pending-dot: #E0A100;
+  --progress-bg: #CFFAFE; --progress-fg: #0E7490; --progress-dot: #06B6D4;
+  --done-bg: #DDF5E3; --done-fg: #1C6B35; --done-dot: #2E9B50;
+  --alert-bg: #FFF1E6; --alert-fg: #B5410F; --alert-dot: #E5531A;
+  --error: #DC2626;
+
+  /* Spacing — 8pt grid with 4pt half-step */
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 20px; --s-6: 24px; --s-8: 32px; --s-10: 40px; --s-12: 48px;
+
+  /* Radius */
+  --r-sm: 8px; --r-md: 12px; --r-lg: 16px; --r-xl: 20px; --r-pill: 999px;
+
+  /* Type */
+  --font-display: 'Bricolage Grotesque Variable', 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-body: 'Geist Variable', 'Geist', system-ui, sans-serif;
+  --font-mono: 'Geist Mono Variable', 'Geist Mono', ui-monospace, monospace;
+
+  /* Layout */
+  --sidebar-w: 248px;
+  --control-h: 44px;
+  --shadow-drawer: -24px 0 48px rgba(15, 23, 42, 0.25);
+}
