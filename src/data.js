@@ -17,6 +17,14 @@ export const TICKETS = [
   { id: 'CT-2026-432', type: 'Collection & Transport', loc: 'Knowledge Park II', zone: 'Zone 7 · Gr. Noida', who: 'Sunil Kumar', time: '23 min ago', status: 'Done' },
   { id: 'EJ-2026-119', type: 'Enforcement', loc: 'Sector 50 Main Rd', zone: 'Zone 2 · Noida', who: 'Deepa Nair', time: '31 min ago', status: 'Pending' },
   { id: 'GR-311-0943', type: '311 Grievance', loc: 'Sector 104, Hajipur', zone: 'Zone 4 · Noida', who: 'Vikas Gupta', time: '38 min ago', status: 'Done' },
+  { id: 'CT-2026-433', type: 'Collection & Transport', loc: 'Sector 15 Metro Station', zone: 'Zone 1 · Noida', who: 'Farhan Ali', time: '44 min ago', status: 'In-Progress' },
+  { id: 'EJ-2026-120', type: 'Enforcement', loc: 'Sector 44 Commercial Hub', zone: 'Zone 2 · Noida', who: 'Kavya Rao', time: '52 min ago', status: 'Pending' },
+  { id: 'RA-2026-008', type: 'Assessment', loc: 'Sector 128 Wish Town', zone: 'Zone 4 · Noida', who: 'Ravi Sharma', time: '1 hr ago', status: 'Done' },
+  { id: 'GR-311-0944', type: '311 Grievance', loc: 'Alpha 1 Commercial Belt', zone: 'Zone 7 · Gr. Noida', who: 'Pooja Yadav', time: '1 hr ago', status: 'Pending' },
+  { id: 'CT-2026-434', type: 'Collection & Transport', loc: 'Sector 93 Expressview', zone: 'Zone 4 · Noida', who: 'Sunil Kumar', time: '2 hr ago', status: 'Done' },
+  { id: 'EJ-2026-121', type: 'Enforcement', loc: 'Sector 27 Atta Market', zone: 'Zone 1 · Noida', who: 'Neha Verma', time: '2 hr ago', status: 'In-Progress' },
+  { id: 'RA-2026-009', type: 'Assessment', loc: 'Sector 144 SEZ Complex', zone: 'Zone 5 · Noida', who: 'Amit Singh', time: '3 hr ago', status: 'Pending' },
+  { id: 'CT-2026-435', type: 'Collection & Transport', loc: 'Delta 1 Greater Noida', zone: 'Zone 7 · Gr. Noida', who: 'Farhan Ali', time: '3 hr ago', status: 'Done' },
 ];
 
 export const MATERIALS = [

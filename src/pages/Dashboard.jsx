@@ -65,17 +65,21 @@ export default function Dashboard({ tickets }) {
   return (
     <>
       <PageHeader eyebrow="Wed, 7 Oct 2026 · Updated 12 sec ago" title="Operations overview">
-        <label className="field" style={{ flex: '0 1 320px' }}>
-          <Icon name="search" className="muted" />
-          <span className="sr-only">Search tickets</span>
-          <input type="search" placeholder="Search ticket, worker, vehicle…" value={query} onChange={(e) => setQuery(e.target.value)} />
-          <span className="kbd">⌘K</span>
-        </label>
-        <Segmented label="Date range" options={['Today', '7D', '30D']} value={range} onChange={setRange} />
-        <button className="btn btn--secondary btn--icon" aria-label="Notifications" style={{ position: 'relative' }}>
-          <Icon name="bell" />
-          <span style={{ position: 'absolute', top: 10, right: 11, width: 8, height: 8, borderRadius: '50%', background: 'var(--alert-dot)', border: '2px solid #fff' }} />
-        </button>
+        <div className="page-head__controls">
+          <label className="field page-head__search">
+            <Icon name="search" className="muted" />
+            <span className="sr-only">Search tickets</span>
+            <input type="search" placeholder="Search ticket, worker, vehicle…" value={query} onChange={(e) => setQuery(e.target.value)} />
+            <span className="kbd">⌘K</span>
+          </label>
+          <div className="page-head__actions">
+            <Segmented label="Date range" options={['Today', '7D', '30D']} value={range} onChange={setRange} />
+            <button className="btn btn--secondary btn--icon" aria-label="Notifications" style={{ position: 'relative' }}>
+              <Icon name="bell" />
+              <span style={{ position: 'absolute', top: 10, right: 11, width: 8, height: 8, borderRadius: '50%', background: 'var(--alert-dot)', border: '2px solid #fff' }} />
+            </button>
+          </div>
+        </div>
       </PageHeader>
 
       <section className="kpis" aria-label="Key metrics">
@@ -83,13 +87,13 @@ export default function Dashboard({ tickets }) {
       </section>
 
       <div className="split">
-        <section className="card split__main" aria-labelledby="live-title">
-          <div className="card__head">
-            <div style={{ flex: '1 1 220px', display: 'flex', alignItems: 'center', gap: 12 }}>
+        <section className="card split__main ticket-activity-card" aria-labelledby="live-title">
+          <div className="card__head ticket-activity-card__head">
+            <div className="ticket-activity-card__title">
               <h2 id="live-title" className="h2">Live ticket activity</h2>
               <span className="badge badge--live">LIVE</span>
             </div>
-            <div role="tablist" aria-label="Filter by status" style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+            <div role="tablist" aria-label="Filter by status" className="ticket-activity-filters">
               {FILTERS.map((f) => (
                 <button key={f} role="tab" className="chip" aria-selected={f === filter} onClick={() => setFilter(f)}>
                   {f} <span>{count(f)}</span>
@@ -97,8 +101,8 @@ export default function Dashboard({ tickets }) {
               ))}
             </div>
           </div>
-          <div className="table-wrap">
-            <table className="table" style={{ minWidth: 760 }}>
+          <div className="ticket-scroll-wrap" tabIndex={0} aria-label="Live ticket activity scroll list">
+            <table className="table" style={{ minWidth: 680 }}>
               <thead>
                 <tr><th>Ticket</th><th>Category</th><th>Location</th><th>Assigned to</th><th>Updated</th><th>Status</th></tr>
               </thead>
@@ -108,7 +112,7 @@ export default function Dashboard({ tickets }) {
                     <td className="mono nowrap" style={{ fontWeight: 600, fontSize: 13 }}>{t.id}</td>
                     <td>{t.type}</td>
                     <td><div className="cell-stack"><span style={{ fontWeight: 500 }}>{t.loc}</span><small>{t.zone}</small></div></td>
-                    <td><div className="person"><span className={`avatar av-${i % 2}`}>{initials(t.who)}</span>{t.who}</div></td>
+                    <td><div className="person"><span className={`avatar av-${i % 4}`}>{initials(t.who)}</span>{t.who}</div></td>
                     <td className="muted nowrap">{t.time}</td>
                     <td><Badge status={t.status} /></td>
                   </tr>
@@ -120,7 +124,7 @@ export default function Dashboard({ tickets }) {
             </table>
           </div>
           <div className="card__foot">
-            <span>Showing {rows.length} of {total} open tickets today</span>
+            <span>Showing {rows.length} of {tickets.length} open tickets today</span>
             <a href="#/workers" style={{ fontWeight: 600 }}>View all tickets →</a>
           </div>
         </section>
